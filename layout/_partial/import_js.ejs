@@ -1,0 +1,121 @@
+<%- js("js/material.min") %>
+<%- js("js/search.min") %>
+
+
+<div id="QRBox-wrapper">
+    <div id="QRBox" class="pos-f left-100">
+        <div id="MainBox"></div>
+    </div>
+</div>
+
+<!-- Donation QRcode-->
+<script>
+    $(".BTCBn").click(function() {
+        $("#QRBox-wrapper").css({
+            'width': '100%',
+            'height': '100%',
+            'background-color': 'rgba(255,255,255,0.8)',
+            'z-index': '99'
+        });
+        $("#QRBox").css({
+            'background-image': 'url(/images/donate/BTCQR.png)',
+            'opacity': '1'
+
+        });
+
+        if ($(".material-drawer").hasClass("is-visible")) {
+            $(".material-drawer").removeClass("is-visible")
+        };
+        if ($(".mdl-layout__obfuscator").hasClass("is-visible")) {
+            $(".mdl-layout__obfuscator").removeClass("is-visible")
+        };
+    });
+    $(".AliPay").click(function() {
+        $("#QRBox-wrapper").css({
+            'width': '100%',
+            'height': '100%',
+            'background-color': 'rgba(255,255,255,0.8)',
+            'z-index': '99'
+        });
+        $("#QRBox").css({
+            'background-image': 'url(/images/donate/AliPayQR.png)',
+            'opacity': '1'
+
+        });
+
+        if ($(".material-drawer").hasClass("is-visible")) {
+            $(".material-drawer").removeClass("is-visible")
+        };
+        if ($(".mdl-layout__obfuscator").hasClass("is-visible")) {
+            $(".mdl-layout__obfuscator").removeClass("is-visible")
+        };
+    });
+    $(".WeChat").click(function() {
+        $("#QRBox-wrapper").css({
+            'width': '100%',
+            'height': '100%',
+            'background-color': 'rgba(255,255,255,0.8)',
+            'z-index': '99'
+        });
+        $("#QRBox").css({
+            'background-image': 'url(/images/donate/WeChanQR.png)',
+            'opacity': '1'
+        });
+
+        if ($(".material-drawer").hasClass("is-visible")) {
+            $(".material-drawer").removeClass("is-visible")
+        };
+        if ($(".mdl-layout__obfuscator").hasClass("is-visible")) {
+            $(".mdl-layout__obfuscator").removeClass("is-visible")
+        };
+    });
+
+    $("#QRBox-wrapper").click(function() {
+        $(this).css({
+            'width': '0',
+            'height': '0',
+            'z-index': '-10'
+        });
+        $("#QRBox").css({
+            'background-image': 'url()',
+            'opacity': '0'
+
+        });
+    });
+</script>
+
+<!-- Change Language-->
+<script>
+$(document).ready(function () {
+    // Display current Language   
+    if (window.location.pathname.indexOf("en") > -1) {
+        $("#lang-select").val('en');
+    }
+    
+    // Click to change
+    $('#lang-select').change( function () {
+        var targetLang = $(this).val() + "/";
+        
+        if($(this).val() == "zh-cn") targetLang = "";
+        location.href = "/" + targetLang;
+    });
+});
+</script>
+
+<!-- Google Analytics -->
+<script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-83419544-3', 'auto');
+    ga('send', 'pageview');
+</script>

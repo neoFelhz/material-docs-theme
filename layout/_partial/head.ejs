@@ -1,0 +1,37 @@
+<head>
+    <!-- Meta & INfo -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Material theme, an elegant & Material Design theme.">
+	<meta name="keywords" content="Hexo, hexo, theme, hexo theme, viosey, material theme, material design, material 主题">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+    
+    <!-- Title -->
+    <%
+        var title = page.title;
+
+        if (is_archive()){
+            title = __('archive_a');
+
+            if (is_month()){
+                title += ': ' + page.year + '/' + page.month;
+            } else if (is_year()){
+                title += ': ' + page.year;
+            }
+        } else if (is_category()){
+            title = __("title.category") + ': ' + page.category;
+        } else if (is_tag()){
+            title = __("title.tag") + ': ' + page.tag;
+        }
+    %>
+    <title>
+        <% if (title){ %><%= title %> | <% } %><%= config.title %>
+    </title>
+    
+	<!-- Styles -->
+    <%- css("css/material.min") %>
+    <%- css("css/style.min") %>
+    <%- js("js/jquery.min") %>
+</head>
