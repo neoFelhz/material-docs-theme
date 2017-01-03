@@ -10,7 +10,7 @@
 
 <!-- Donation QRcode-->
 <script>
-    $(".BTCBn").click(function() {
+    $(".BTCBn").click(function () {
         $("#QRBox-wrapper").css({
             'width': '100%',
             'height': '100%',
@@ -30,7 +30,7 @@
             $(".mdl-layout__obfuscator").removeClass("is-visible")
         };
     });
-    $(".AliPay").click(function() {
+    $(".AliPay").click(function () {
         $("#QRBox-wrapper").css({
             'width': '100%',
             'height': '100%',
@@ -50,7 +50,7 @@
             $(".mdl-layout__obfuscator").removeClass("is-visible")
         };
     });
-    $(".WeChat").click(function() {
+    $(".WeChat").click(function () {
         $("#QRBox-wrapper").css({
             'width': '100%',
             'height': '100%',
@@ -70,7 +70,7 @@
         };
     });
 
-    $("#QRBox-wrapper").click(function() {
+    $("#QRBox-wrapper").click(function () {
         $(this).css({
             'width': '0',
             'height': '0',
@@ -86,27 +86,27 @@
 
 <!-- Change Language-->
 <script>
-$(document).ready(function () {
-    // Display current Language   
-    if (window.location.pathname.indexOf("en") > -1) {
-        $("#lang-select").val('en');
-    }
-    
-    // Click to change
-    $('#lang-select').change( function () {
-        var targetLang = $(this).val() + "/";
-        
-        if($(this).val() == "zh-cn") targetLang = "";
-        location.href = "/" + targetLang;
+    $(document).ready(function () {
+        // Display current Language   
+        if (window.location.pathname.indexOf("en") > -1) {
+            $("#lang-select").val('en');
+        }
+
+        // Click to change
+        $('#lang-select').change(function () {
+            var targetLang = $(this).val() + "/";
+
+            if ($(this).val() == "zh-cn") targetLang = "";
+            location.href = "/" + targetLang;
+        });
     });
-});
 </script>
 
 <!-- Google Analytics -->
 <script>
-    (function(i, s, o, g, r, a, m) {
+    (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
+        i[r] = i[r] || function () {
             (i[r].q = i[r].q || []).push(arguments)
         }, i[r].l = 1 * new Date();
         a = s.createElement(o),
@@ -116,6 +116,6 @@ $(document).ready(function () {
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-83419544-3', 'auto');
+    ga('create', 'UA-83419544-1', 'auto');
     ga('send', 'pageview');
 </script>
